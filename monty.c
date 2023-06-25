@@ -1,25 +1,24 @@
 #include "monty.h"
+global_var var_global;
 /**
- * main - entry point
- * @argc: argument counter
- * @argv: argument vector
- * Return: success || failure
+ * main - function that drives monty program
+ * @ac: number of the arguments
+ * @av: opcode argument file
+ * Return: 0 on success
  */
-int main(int argc, char **argv)
+int main(int ac, char **av)
 {
+	stack_t *stack;
 
-	if (argc != 2)
+	stack = NULL;
+	if (ac != 2)
 	{
-		 /** print usage error*/
-
-		usage_error();
-	}
-	else
-	{
-		/** read the file and execute */
-		execute(argv[1]);
+		fprintf(stderr, "USAGE: monty file\n");
+		exit(EXIT_FAILURE);
 	}
 
-	return (EXIT_SUCCESS);
+	read_file(av[1], &stack);
 
+	free_dlistint(stack);
+	return (0);
 }
