@@ -12,7 +12,7 @@ stack_t *createNode(int n)
 	stack_t *new = NULL;
 
 	new = mallock(sizeof(stack_t));
-	if (new = NULL)
+	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
@@ -21,7 +21,7 @@ stack_t *createNode(int n)
 	new->prev = NULL;
 	new->next = NULL;
 
-	return(new);
+	return (new);
 }
 /**
  * push - pushes new nodes in the stack
@@ -52,7 +52,7 @@ void pall(stack_t **stack, unsigned int line_number)
 		clean_stack(stack);
 		exit(EXIT_FAILURE);
 	}
-	else:
+	else
 	fprint(stdout, "&d\n" (*stack)->n);
 }
 /**

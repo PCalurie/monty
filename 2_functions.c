@@ -58,7 +58,7 @@ void mul(stack_t **stack, unsigned int line_number)
 	val->n = mul;
 }
 /**
- * mod - function computes the rest of the division of the second top element 
+ * mod - function computes the rest of the division of the second top element
  * of the stack by the top element of the stack
  * @stack: double pointer to the pointer
  * @line_number: number of the line of code

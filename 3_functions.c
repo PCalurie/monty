@@ -6,7 +6,7 @@
  */
 int _isdigit(char *c)
 {
-	char *temp = ;
+	char *temp = c;
 
 	if (c == NULL)
 		return (0);
@@ -14,7 +14,7 @@ int _isdigit(char *c)
 	if (*temp == '-')
 		tmp++;
 
-	if (; *temp != \0; temp++)
+	if (; *temp != '\0'; temp++)
 	{
 		if (*temp < '0' || *temp > '9')
 			return (0);
