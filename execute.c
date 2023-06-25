@@ -28,6 +28,8 @@ void execute(char *argv)
 				continue;
 			val = strtok(NULL, " \n\t\r");
 			r = get_opc(&stack, token, val, c_line);
+			if (r == 1)
+				push_error(cmd.fd, cmd.line, stack, c_line);
 			if (r == -1)
 				instr_error(cmd.fd, cmd.line, stack, token, c_line);
 		}
@@ -36,5 +38,5 @@ void execute(char *argv)
 		fclose(cmd.fd);
 	}
 	else
-		pen_error(argv);
+		open_error(argv);
 }
