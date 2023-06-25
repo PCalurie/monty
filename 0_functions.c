@@ -14,7 +14,7 @@ stack_t *createNode(int n)
 	new = mallock(sizeof(stack_t));
 	if (new = NULL)
 	{
-		fprintf(stderr, "Error: malloc error\n");
+		fprintf(stderr, "Error: malloc failed\n");
 		exit(EXIT_FAILURE);
 	}
 	new->n = n;
@@ -48,7 +48,7 @@ void pall(stack_t **stack, unsigned int line_number)
 {
 	if (!*stack || !stack)
 	{
-		fprintf((stderr, "L%d: can't print, stack empty\n");
+		fprintf((stderr, "L%u: can't pint, stack empty\n", line_number);
 		clean_stack(stack);
 		exit(EXIT_FAILURE);
 	}
@@ -66,7 +66,7 @@ void pop(stack_t **stack, unsigned int line_number)
 
 	if (!*stack)
 	{
-		fprintf(stderr, "L%d: can't pop an empty stack\n");
+		fprintf(stderr, "L%u: can't pop an empty stack\n", line_number);
 		_free(*stack);
 		exit(EXIT_FAILURE);
 	}
