@@ -12,7 +12,7 @@ int _isdigit(char *c)
 		return (0);
 
 	if (*temp == '-')
-		tmp++;
+		temp++;
 
 	for (; *temp != '\0'; temp++)
 	{

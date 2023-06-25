@@ -39,7 +39,7 @@ void swap(stack_t **stack, unsigned int line_number)
  * @stack: double pointer to the stack
  * @line_number: number of the line of the code
  */
-void add(stack_t stack, unsigned int line_number)
+void add(stack_t **stack, unsigned int line_number)
 {
 	stack_t *val = NULL;
 	int sum = 0;
@@ -64,12 +64,12 @@ void add(stack_t stack, unsigned int line_number)
  * @stack: double pointer to the stack
  * @line_number: number of the line of code
  */
-void pchar(stack_t stack, unsigned int line_number)
+void pchar(stack_t **stack, unsigned int line_number)
 {
 	if (!*stack)
 	{
 		fprintf(stderr, "L%u: can't pchar, stack empty\n", line_number);
-		_free(stack);
+		_free(*stack);
 		exit(EXIT_FAILURE);
 	}
 	if ((*stack)->n >= 0 && (*stack)->n <= 127)
@@ -79,7 +79,7 @@ void pchar(stack_t stack, unsigned int line_number)
 	else
 	{
 		fprintf(stderr, "L%u: can't pchar, value out of range\n", line_number);
-		_free(stack);
+		_free(*stack);
 		exit(EXIT_FAILURE);
 	}
 }
@@ -89,7 +89,7 @@ void pchar(stack_t stack, unsigned int line_number)
  * @line_number: number of the line of code
  *
  */
-void sub(stack_t *stack, unsigned int line_number)
+void sub(stack_t **stack, unsigned int line_number)
 {
 	stack_t *val = NULL;
 	int sub;

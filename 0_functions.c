@@ -11,7 +11,7 @@ stack_t *createNode(int n)
 {
 	stack_t *new = NULL;
 
-	new = mallock(sizeof(stack_t));
+	new = malloc(sizeof(stack_t));
 	if (new == NULL)
 	{
 		fprintf(stderr, "Error: malloc failed\n");
@@ -28,7 +28,7 @@ stack_t *createNode(int n)
  * @stack: double pointer to the stack
  * @line_number: number of the line of code
  */
-void push(stack_t **stack, unsingned int line_number)
+void push(stack_t **stack, unsigned int line_number)
 {
 	stack_t *new = NULL;
 	(void)line_number;
@@ -46,14 +46,16 @@ void push(stack_t **stack, unsingned int line_number)
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
-	if (!*stack || !stack)
+	stack_t *tmp = NULL;
+	(void)line_number;
+
+	tmp = *stack;
+
+	while (tmp != NULL)
 	{
-		fprintf((stderr, "L%u: can't pint, stack empty\n", line_number);
-		clean_stack(stack);
-		exit(EXIT_FAILURE);
+		fprintf(stdout, "%d\n", tmp->n);
+		tmp = tmp->next;
 	}
-	else
-	fprint(stdout, "&d\n" (*stack)->n);
 }
 /**
  * pop - remove a node from a stack
@@ -79,4 +81,22 @@ void pop(stack_t **stack, unsigned int line_number)
 
 		*stack = temp;
 	}
+}
+/**
+ * pint - function prints the value at the top of the stack,
+ * followed by a new line
+ * @stack: double pointer to the stack
+ * @line_number: number to the line of code
+ */
+void pint(stack_t **stack, unsigned int line_number)
+{
+	if (!*stack || !stack)
+	{
+		fprintf(stderr, "L%d: can't pint, stack empty\n", line_number);
+		clean_stack(stack);
+		exit(EXIT_FAILURE);
+	}
+	else
+		fprintf(stdout, "%d\n", (*stack)->n);
+
 }

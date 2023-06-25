@@ -13,7 +13,7 @@ void usage_error(void)
  */
 void open_error(char *file)
 {
-	fprintf(stderr, "Error: Can't open file\n", file);
+	fprintf(stderr, "Error: Can't open file %s\n", file);
 	exit(EXIT_FAILURE);
 }
 /**
@@ -23,7 +23,7 @@ void open_error(char *file)
  * @line_number: buffer line number
  * @stack: stack used
  */
-void push_error(FILE *fd, stack_t *stack, int line_number, char *line)
+void push_error(FILE *fd, char *line, stack_t *stack, int line_number)
 {
 	fprintf(stderr, "L%u: usage:  push integer\n", line_number);
 	fclose(fd);
@@ -39,7 +39,7 @@ void push_error(FILE *fd, stack_t *stack, int line_number, char *line)
  * @line: pointer to the buffer
  * @val: pointer to instruction inputed
  */
-void instr_error(FILE *fd, stack_t *stack, char *line, char *val,
+void instr_error(FILE *fd, char *line, stack_t *stack, char *val,
 		int line_number)
 {
 	fprintf(stderr, "L%u: unknown instruction %s", line_number, val);

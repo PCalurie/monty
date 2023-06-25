@@ -1,12 +1,12 @@
 #include "monty.h"
 
 /**
- * div - function divides the second top element of the stack
+ * divide - function divides the second top element of the stack
  * by the top element of the stack.
  * @stack: double pointer to the stack
  * @line_number: number  of the code
  */
-void div(stack_t **stack, unsigned int line_number)
+void divide(stack_t **stack, unsigned int line_number)
 {
 
 	stack_t *val = NULL;
