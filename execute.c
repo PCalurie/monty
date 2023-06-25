@@ -27,7 +27,7 @@ void execute(char *argv)
 			else if (*token == '#')
 				continue;
 			val = strtok(NULL, " \n\t\r");
-			r = get_op(&stack, token, val, c_line);
+			r = get_opc(&stack, token, val, c_line);
 			if (r == -1)
 				instr_error(cmd.fd, cmd.line, stack, token, c_line);
 		}
