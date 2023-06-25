@@ -2,7 +2,7 @@
 cmd_t cmd = {NULL, NULL};
 /**
  * execute - function executes a bytecode
- * argv: arguments
+ * @argv: arguments
  */
 void execute(char *argv)
 {

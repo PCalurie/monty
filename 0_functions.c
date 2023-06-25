@@ -26,7 +26,7 @@ stack_t *createNode(int n)
 /**
  * push - pushes new nodes in the stack
  * @stack: double pointer to the stack
- * @line_number
+ * @line_number: number of the line of code
  */
 void push(stack_t **stack, unsingned int line_number)
 {
@@ -42,7 +42,7 @@ void push(stack_t **stack, unsingned int line_number)
 /**
  * pall - prints all the values in a stack
  * @stack: double pointer to the stack
- * @line_number
+ * @line_number: number of the line of code
  */
 void pall(stack_t **stack, unsigned int line_number)
 {
@@ -58,7 +58,7 @@ void pall(stack_t **stack, unsigned int line_number)
 /**
  * pop - remove a node from a stack
  * @stack: double pointer to the stack
- * @line_number: number of the line
+ * @line_number: number of the line of code
  */
 void pop(stack_t **stack, unsigned int line_number)
 {
